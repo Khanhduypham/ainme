@@ -104,7 +104,7 @@ pillow==10.3.0
 platformdirs==4.2.2
 portpicker==1.2.0
 preshed==3.0.9
-prompt-toolkit==1.0.18
+prompt-toolkit==3.0.41
 proto-plus==1.23.0
 protobuf==4.25.3
 ptyprocess==0.7.0
@@ -127,7 +127,7 @@ rake-nltk==1.0.6
 redis==5.0.4
 referencing==0.32.0
 regex==2024.5.10
-requests==2.21.0
+requests>=2.13.0,<3.0.0
 rich==13.7.1
 rpds-py==0.13.2
 rsa==4.9
