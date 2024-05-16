@@ -4,6 +4,13 @@ from rake_nltk import Rake
 import random
 import google.generativeai as genai
 
+# Download model
+import nltk
+import ssl
+# Disable SSL certificate verification
+ssl._create_default_https_context = ssl._create_unverified_context
+nltk.download('punkt')
+nltk.download('stopwords')
 # Configure the generative model
 genai.configure(api_key="AIzaSyDUaZrbMBXDgmj8LyMoYq6Ts2pl-j6zsvQ")
 model = genai.GenerativeModel('gemini-pro')
