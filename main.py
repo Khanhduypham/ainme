@@ -3,6 +3,7 @@ import spacy
 from rake_nltk import Rake
 import random
 import google.generativeai as genai
+from flask_cors import CORS
 
 # Download model
 import nltk
@@ -11,11 +12,13 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.download('punkt')
 nltk.download('stopwords')
+
 # Configure the generative model
 genai.configure(api_key="AIzaSyDUaZrbMBXDgmj8LyMoYq6Ts2pl-j6zsvQ")
 model = genai.GenerativeModel('gemini-pro')
 
 app = Flask(__name__)
+cors = CORS(app, resource={r"/*": {"origins": "*"}}, methods=['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'])
 
 # Load spaCy's pre-trained model
 nlp = spacy.load("en_core_web_sm")
